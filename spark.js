@@ -1,5 +1,5 @@
 function addPopUp(feature, layer){
-	var popupTxt = "";
+	var popupTxt = "Hi it's joel";
 	var osmURL = ""
 
 	// does this feature have a property named id?
