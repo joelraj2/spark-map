@@ -29,7 +29,7 @@ function addPopUp(feature, layer){
 
 
 	if (osmURL != "") {
-		popupTxt += `</br></br>View this feature on <a target="_blank" href=${osmURL}>OSM</a>!`
+		popupTxt += `</br></br>Hi it's Joel - see this on <a target="_blank" href=${osmURL}>OSM</a>!`
 	}
 	layer.bindPopup(popupTxt);
 }
