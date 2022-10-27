@@ -29,7 +29,7 @@ function addPopUp(feature, layer){
 
 
 	if (osmURL != "") {
-		popupTxt += `</br></br>Hi its me</a>!`
+		popupTxt += `</br></br>View this feature on <a target="_blank" href=${osmURL}>OSM</a>!`
 	}
 	layer.bindPopup(popupTxt);
 }
@@ -113,7 +113,7 @@ success: function (response) {
 }
 
 var buildingsStyle = {
-color: "#E22B2B", 
+color: "#FF1493", 
 weight: 5, 
 opacity: 0.70
 };
@@ -143,7 +143,7 @@ opacity: 0.70
 };
 
 var schoolStyle = {
-color: "#15cf5c", 
+color: "#FF1493", 
 weight: 5, 
 opacity: 0.70
 };
