@@ -35,7 +35,8 @@
 
 		// Set URLs for the GeoJSONs we will be using
 		var buildingsURL = "data/stlschools.geojson";
-		
+		var sidewalksURL = "data/STL-sidewalks.geojson";
+		                        
 		// Create the map variable
 		var map = L.map('map')
 			.setView([38.6836, -90.1923], 12)
@@ -51,6 +52,7 @@
 		var mapboxImagery = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA').addTo(map);
 		
 		var buildingsLayer = addGJLayer(buildingsURL);
+		var buildingsLayer = addGJLayer(sidewalksURL);
 
 		// Add the layers to their layer group
 		var baseMaps = {
