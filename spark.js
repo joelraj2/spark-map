@@ -119,7 +119,7 @@ opacity: 0.70
 };
 
 var otherStyle = {
-color: "#FFFF00", 
+color: "#1A5276", 
 weight: 5, 
 opacity: 0.5
 };
@@ -143,7 +143,7 @@ opacity: 0.70
 };
 
 var schoolStyle = {
-color: "#FF1493", 
+color: "##F4F6F7", 
 weight: 5, 
 opacity: 0.70
 };
