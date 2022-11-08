@@ -113,7 +113,7 @@ success: function (response) {
 }
 
 var buildingsStyle = {
-color: "#FF1493", 
+color: "#F4F6F7", 
 weight: 5, 
 opacity: 0.70
 };
