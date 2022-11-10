@@ -41,20 +41,17 @@ else if (feature.properties.building == 'apartments') {return apartmentsStyle}
 else if (feature.properties.building == 'school') {return schoolStyle}
 else if (feature.properties.building == 'garage') {return garageStyle}
 else if (feature.properties.building == 'garages') {return garagesStyle}
+	else if (feature.properties.footway == 'sidewalk') {return sidewalkStyle}
 else if (feature.properties.building == 'residential') {return residentialStyle}	
 else if (feature.properties.building == 'service') {return serviceStyle}
 else {return buildingsStyle}
 } else {
 return otherStyle
 }
-
-	if (feature.properties.footway){
-	if (feature.properties.footway == 'sidewalk') {return sidewalkStyle}
-	else {return otherStyle}	
-	}
-	else {
-	return otherStyle
-	}
+	
+	
+	
+	
 	
 if (feature.properties.highway){
 if (feature.properties.highway == 'railway') {return railwayStyle}
