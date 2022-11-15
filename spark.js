@@ -36,20 +36,49 @@ function addPopUp(feature, layer){
 
 function addStyle(feature, layer){
 if (feature.properties.building) {
-if (feature.properties.building == 'house') {return houseStyle}
-else if (feature.properties.building == 'apartments') {return apartmentsStyle}
-else if (feature.properties.building == 'school') {return schoolStyle}
-else if (feature.properties.building == 'garage') {return garageStyle}
-else if (feature.properties.building == 'garages') {return garagesStyle}
-	else if (feature.properties.footway == 'sidewalk') {return sidewalkStyle}
+switch (feature.properties.building){
+	case 'apartments':
+		return apartmentsStyle;
+		break;
+
+		case 'school':
+		return schoolStyle;
+		break;
+
+		case 'garage':
+		return garagesStyle;
+		break;
+
+		case 'garages':
+		return garagesStyle;
+		break;
+
+		case 'apartments':
+		return apartmentsStyle;
+		break;
+		
+		default:
+		return otherStyle;
+		break;
+}
+
+else if (feature.properties.footway){
+	switch (feature.properties.footway) {
+		case 'sidewalk':
+		return sidewalkStyle;
+		break;
+			
+		default:
+		return otherStyle;
+		break;
+}
+}
 else if (feature.properties.building == 'residential') {return residentialStyle}	
 else if (feature.properties.building == 'service') {return serviceStyle}
 else {return buildingsStyle}
 } else {
 return otherStyle
 }
-	
-	
 	
 	
 	
