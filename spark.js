@@ -35,7 +35,6 @@ function addPopUp(feature, layer){
 }
 
 function addStyle(feature, layer){
-if (feature.properties.building) {
 switch (feature.properties.building){
 	case 'apartments':
 		return apartmentsStyle;
@@ -57,17 +56,17 @@ switch (feature.properties.building){
 		return apartmentsStyle;
 		break;
 		
-		case 'service':
-		return serviceStyle;
-		break;
+		                 case 'service':
+		                 return serviceStyle;
+		                 break;
 		
 		default:
 		return otherStyle;
 		break;
 }
 }
-	 else if (feature.properties.footway){
-	switch (feature.properties.footway) {
+switch (feature.properties.footway) {
+		
 		case 'sidewalk':
 		return sidewalkStyle;
 		break;
@@ -77,8 +76,8 @@ switch (feature.properties.building){
 		break;
 }
 	 	
-else if (feature.properties.highway){
-	switch (feature.properties.highway) {
+switch (feature.properties.highway) {
+		
 		case 'railway':
 			return railwayStyle;
 			break;
