@@ -57,6 +57,10 @@ switch (feature.properties.building){
 		return apartmentsStyle;
 		break;
 		
+		case 'service':
+		return serviceStyle;
+		break;
+		
 		default:
 		return otherStyle;
 		break;
@@ -72,25 +76,18 @@ switch (feature.properties.building){
 		return otherStyle;
 		break;
 }
+	 	
+else if (feature.properties.highway){
+	switch (feature.properties.highway) {
+		case 'railway':
+			return railwayStyle;
+			break;
+		default:
+			return otherStyle;
+			break;
+	}
 }
-else if (feature.properties.building == 'residential') {return residentialStyle}	
-else if (feature.properties.building == 'service') {return serviceStyle}
-else {return buildingsStyle}
-} else {
-return otherStyle
-}
-	
-	
-	
-if (feature.properties.highway){
-if (feature.properties.highway == 'railway') {return railwayStyle}
-else {return OwaysStyle}
-}
-else {
-return otherStyle
-}
-
-}
+	 }
 
 function addGJLayer(GJson) {
 // Add buildings layer
