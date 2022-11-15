@@ -61,7 +61,7 @@ switch (feature.properties.building){
 		return otherStyle;
 		break;
 }
-
+}
 else if (feature.properties.footway){
 	switch (feature.properties.footway) {
 		case 'sidewalk':
