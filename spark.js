@@ -27,9 +27,9 @@ function addPopUp(feature, layer){
 		popupTxt = `<b>${feature.properties.name}</b>`;
 	}
 
-if (feature.properties.schools){
+if (feature.properties.building){
 	popupTxt += '</br></br><br>View this <i>School<i> on <a target="_blank" href=${osmURL}>OSM</a><b>'
-}else if(feature.properties.footway){
+}else if(feature.properties.sidewalk){
 	popupTxt += '</br></br><br>View this <i>sidewalk<i> on <a target="_blank" href=${osmURL}>OSM</a><b>'
 }
 	layer.bindPopup(popupTxt);
