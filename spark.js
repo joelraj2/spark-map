@@ -177,7 +177,7 @@ opacity: 0.70
 };
 
 var schoolStyle = {
-color: "#FFFFFF", 
+color: "#38f5a3", 
 weight: 5, 
 opacity: 0.70
 };
