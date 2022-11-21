@@ -1,5 +1,5 @@
 function addPopUp(feature, layer){
-	var popupTxt = "Hi it's joel";
+	var popupTxt = "";
 	var osmURL = ""
 
 	// does this feature have a property named id?
@@ -7,7 +7,7 @@ function addPopUp(feature, layer){
 		// Excellent! We can now link directly to the feature
 		featureID = feature.properties['@id'];
 		osmURL = `https://www.openstreetmap.org/${featureID}`
-		popupTxt = `<b>OSM ${featureID.split('/')[0]} ID: ${featureID.split('/')[1]}</b>`;
+		popupTxt = `<b>OSM ${featureID.split('/')[0]} ID: ${featureID.split('/')[1]}</b>`; -->
 	} else if (feature.properties && feature.properties['id']) {
 		// Excellent! We can now link directly to the feature
 		featureID = feature.properties['id'];
@@ -22,17 +22,20 @@ function addPopUp(feature, layer){
 		osmURL = `https://www.openstreetmap.org/edit/#map=${map.getZoom()}/${centroid[0]}/${centroid[0]}`;
 	}
 
-	// Try to get the name of the feature
+	/Try to get the name of the feature
 	if (feature.properties && feature.properties.name) {
 		popupTxt = `<b>${feature.properties.name}</b>`;
 	}
 
-
-	if (osmURL != "") {
-		popupTxt += `</br></br>Hi it's Joel - see this on <a target="_blank" href=${osmURL}>OSM</a>!`
-	}
-	layer.bindPopup(popupTxt);
+if (feature.properties.schools){
+	popupTxt += '</br></br><br>View this <i>School<i> on <a target="_blank" href=${osmURL}>OSM</a><b>'
+}else if(feature.properties.footway){
+	popupTxt += '</br></br><br>View this <i>sidewalk<i> on <a target="_blank" href=${osmURL}>OSM</a><b>'
 }
+	layer.bindPopup(popupTxt);
+} 
+		
+		
 
 function addStyle(feature, layer){
 if (feature.properties.building) {
