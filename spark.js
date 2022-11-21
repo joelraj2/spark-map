@@ -147,7 +147,7 @@ success: function (response) {
 
 
 var sidewalkStyle = {
-color: "#D800FF", 
+color: "#FFFFFF", 
 weight: 5, 
 opacity: 0.70
 };
