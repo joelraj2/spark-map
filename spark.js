@@ -7,7 +7,7 @@ function addPopUp(feature, layer){
 		// Excellent! We can now link directly to the feature
 		featureID = feature.properties['@id'];
 		osmURL = `https://www.openstreetmap.org/${featureID}`
-		popupTxt = `<b>OSM ${featureID.split('/')[0]} ID: ${featureID.split('/')[1]}</b>`; -->
+		popupTxt = `<b>OSM ${featureID.split('/')[0]} ID: ${featureID.split('/')[1]}</b>`;
 	} else if (feature.properties && feature.properties['id']) {
 		// Excellent! We can now link directly to the feature
 		featureID = feature.properties['id'];
