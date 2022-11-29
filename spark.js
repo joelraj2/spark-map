@@ -22,7 +22,7 @@ function addPopUp(feature, layer){
 		osmURL = `https://www.openstreetmap.org/edit/#map=${map.getZoom()}/${centroid[0]}/${centroid[0]}`;
 	}
 
-	/Try to get the name of the feature
+	//Try to get the name of the feature
 	if (feature.properties && feature.properties.name) {
 		popupTxt = `<b>${feature.properties.name}</b>`;
 	}
