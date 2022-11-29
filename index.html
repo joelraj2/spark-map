@@ -105,7 +105,7 @@
 			        		//user cancelled
 			        	} else {
 								var bounds = map.getBounds();
-								var overpassURL = `https://overpass-api.de/api/interpreter?data=[timeout:25];(way${query}(${bounds._southWest.lat},${bounds._southWest.lng},${bounds._northEast.lat},${bounds._northEast.lng});); out body;>;out skel qt;`
+								var overpassURL = `https://overpass-api.de/api/interpreter?data=[timeout:25];(node${query}(${bounds._southWest.lat},${bounds._southWest.lng},${bounds._northEast.lat},${bounds._northEast.lng});); out body;>;out skel qt;`
 				        		var outdata = getXML(overpassURL, layerControl);
 				        	}
 		        	}
