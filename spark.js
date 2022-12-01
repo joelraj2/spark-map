@@ -142,6 +142,13 @@ success: function (response) {
 
 		/* If adding the layer to the map, be sure to give it a name! */
 		
+		var query = window.prompt("What do you want to query?",'["building"="yes"]');
+			        	if (query == null || query == "") {
+						query = "New Layer";
+					}
+		
+		
+		
 		lyrControl.addOverlay(newLayer, "Overpass Query");
 		alert("Your layer has been added to the map!");
 	}
