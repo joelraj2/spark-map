@@ -142,7 +142,7 @@ success: function (response) {
 
 		/* If adding the layer to the map, be sure to give it a name! */
 		
-		var query = window.prompt("What do you want to query?",'["building"="yes"]');
+		var query = window.prompt("Name your query something cool")
 			        	if (query == null || query == "") {
 						query = "New Layer";
 					}
