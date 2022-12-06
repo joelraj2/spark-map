@@ -142,10 +142,10 @@ success: function (response) {
 
 		/* If adding the layer to the map, be sure to give it a name! */
 		
-		var query = window.prompt("Name your query something cool")
-			        	if (query == null || query == "") {
-						query = "New Layer";
-					}
+		var query = window.prompt("Name your new layer something cool",'New Layer');
+if (query == null || query == "") {
+query = "New Layer";
+}
 		
 		
 		
