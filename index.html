@@ -133,7 +133,56 @@
 			}
 			else {
 				console.log(e.latlng.toString()) }
-		}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		        var button3 = L.DomUtil.create('a', 'leaflet-control-button', container);
+		        L.DomEvent.disableClickPropagation(button2);
+		        L.DomEvent.on(button2, 'click', function(){
+		        	if(map.getZoom() < 14) {
+		        		alert("Please zoom in!")
+		        	} else {
+			        	var query = window.prompt("Number of features:",'["building"="yes"]');
+			        	if (query == null || query == "") {
+			        		//user cancelled
+			        	} else {
+								var bounds = map.getBounds();
+								var overpassURL = `https://overpass-api.de/api/interpreter?data=[timeout:25];(node${query}(${bounds._southWest.lat},${bounds._southWest.lng},${bounds._northEast.lat},${bounds._northEast.lng});); out body;>;out skel qt;`
+				        		var outdata = getXML(overpassURL, layerControl);
+				        	}
+		        	}
+		        });
+
+		        button3.innerHTML = '<img style="max-width:100%; max-height:100%" src="http://cdn.onlinewebfonts.com/svg/img_440978.png">';		  
+
+		        container.title = "Query Overpass Turbo";
+
+		        return container;
+		    },
+		    onRemove: function(map) {},
+		});
+		var control = new L.Control.Button()
+		control.addTo(map);
+
+		function onRightClick(e) {
+			if( e.latlng.lat > 90 || e.latlng.lat < -90) {
+				alert("Error in latitude");
+				console.log("Error: not a valid coordinate");
+			}
+			else if( e.latlng.lng > 180 || e.latlng.lng < -180) {
+				alert("Error in longitude"); 
+				console.log("Error: not a valid coordinate"); 
+			}
+			else {
+				console.log(e.latlng.toString()) }
+			
 
 	</script>
 
