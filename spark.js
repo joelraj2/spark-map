@@ -150,7 +150,7 @@ query = "New Layer";
 		
 		
 		lyrControl.addOverlay(newLayer, "Overpass Query");
-		alert("Your layer has been added to the map!");
+		alert("Your layer has been added to the map with " + overpassGJ.features.length + " features!");
 	}
 }
 });
