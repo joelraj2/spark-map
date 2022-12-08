@@ -111,8 +111,22 @@
 		        	}
 		        });
 
-		        button2.innerHTML = '<img style="max-width:100%; max-height:100%" src="img/overpass.png">';		  
-
+		        button2.innerHTML = '<img style="max-width:100%; max-height:100%" src="img/overpass.png">';	
+		        var button3 = L.DomUtil.create('a', 'leaflet-control-button', container);
+		        L.DomEvent.disableClickPropagation(button3);
+		        L.DomEvent.on(button3, 'click', function()
+				      {var query = window.prompt("What layer do you want to know the number of featrues of");
+				       			        	if (query == null || query == "") {
+			        	} else {
+								var bounds = map.getBounds();
+								var overpassURL = `https://overpass-api.de/api/interpreter?data=[timeout:25];(node${query}(${bounds._southWest.lat},${bounds._southWest.lng},${bounds._northEast.lat},${bounds._northEast.lng});); out body;>;out skel qt;`
+				        		var outdata = getXML(overpassURL, layerControl);
+				        	}
+			
+		        });
+			   button3.innerHTML = '<img style="max-width:100%; max-height:100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Pound_sign_%28blue%29.svg/2048px-Pound_sign_%28blue%29.svg.png">';
+			  
+			
 		        container.title = "Query Overpass Turbo";
 
 		        return container;
@@ -133,7 +147,8 @@
 			}
 			else {
 				console.log(e.latlng.toString()) }
-			
+		}
+
 	</script>
 
 </body>
