@@ -141,7 +141,7 @@ success: function (response) {
 		//lyrControl.addLayer(newLayer);
 
 		/* If adding the layer to the map, be sure to give it a name! */
-		
+		Overpass Query
 		var query = window.prompt("Name your new layer something cool",'New Layer');
 if (query == null || query == "") {
 query = "New Layer";
@@ -149,7 +149,7 @@ query = "New Layer";
 		
 		
 		
-		lyrControl.addOverlay(newLayer, "Overpass Query");
+		lyrControl.addOverlay(newLayer, query);
 		alert("Your layer has been added to the map with " + overpassGJ.features.length + " features!");
 	}
 }
